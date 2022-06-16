@@ -23,10 +23,11 @@ app.get("*", (req, res) => {
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log("Connected to the Database");
     //Listening on the App once connected to the Database
     app.listen(process.env.PORT, () => {
-      console.log(`Backend Active on Port ${process.env.PORT}`);
+      console.log(
+        `Database Connected & Backend Active on Port ${process.env.PORT}`
+      );
     });
   })
   .catch((error) => {
